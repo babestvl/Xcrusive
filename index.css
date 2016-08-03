@@ -1,6 +1,6 @@
 body {
   /*background-color: #00aea6;*/
-  background-image: url("./images/bg.gif");
+  background-image: url("./images/bg.png");
   background-size: 100%;
   color: rgb(74, 80, 84);
   font-family: 'Futura';
@@ -54,17 +54,20 @@ body {
   margin-left: 55px;
 }
 
-#time {
+#time-head {
   background-color: rgba(226, 227, 236, 0.3);
   border-radius: 50px;
   border: 0px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 95px;
   width: 270px;
-  height: 50px;
-  align-content: center;
+  height: 70px;
 }
-
+#time {
+  margin-left: 45px;
+  margin-top: 0px;
+  font-size: 20px;
+}
 #opener {
   background-color: rgb(250, 167, 91);
   border-radius: 50px;
@@ -91,12 +94,6 @@ body {
   align-content: center;
   color: rgb(80, 125, 191);
 }
-/*#km {
-  margin-top: -30px;
-  align-content: center;
-  font-size: 10px;
-  color: rgb(74, 80, 84);
-}*/
 
 #rotate-head {
   background-color: rgba(226, 227, 236, 0.3);
@@ -115,6 +112,13 @@ body {
 }
 
 #ship {
-  margin-top: 200px;
+  margin-top: 105px;
   margin-left: -5px;
+  position: relative;
+  z-index: -1;
+}
+
+#water {
+  background-size: 100%;
+  margin-top: -180px;
 }

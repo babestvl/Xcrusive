@@ -26,113 +26,116 @@
               animation: none;
             }
       </style>
+      <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
    </head>
 
-   <body onbeforeunload="dataBase">
-      <div class="container">
-    <div class="row">
-      <!-- left colum -->
-      <div class="col-sm-4">
-        <div class="panel panel-info" id="temp-head">
-            <center><img class="img-responsive" src="./images/temp.png"/></center>
-            <div class="panel-body">
-              <div class="c100 p25 red" id="temp">
-                <span id="circle-span"></span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-              </div>
-            </div>
-        </div>
+   <body id="bodyDisplay">
+     <div class="container">
+       <div class="row">
+         <!-- left colum -->
+         <div class="col-sm-4">
+           <div class="panel panel-info" id="temp-head">
+               <center><img class="img-responsive" src="./images/temp.png"/></center>
+               <div class="panel-body">
+                 <div class="c100 p25 red" id="temp">
+                   <span id="circle-span"></span>
+                   <div class="slice">
+                       <div class="bar"></div>
+                       <div class="fill"></div>
+                   </div>
+                 </div>
+               </div>
+           </div>
 
-        <div class="panel panel-info" id="analysis-head">
-            <center><img class="img-responsive" src="./images/analysis.png"/></center>
-            <div class="panel-body">
-              <textarea disabled class = "form-control" id="analysis" style="text-align : center"></textarea>
-            </div>
-        </div>
-      </div>
+           <div class="panel panel-info" id="analysis-head">
+               <center><img class="img-responsive" src="./images/history.png"/></center>
+               <div class="panel-body">
+                 <textarea disabled class = "form-control" id="analysis" style="text-align : center"></textarea>
+               </div>
+           </div>
+         </div>
 
-      <!-- center colum -->
-      <div class="col-sm-4" id="dialog">
-        <div class="remodal-bg">
-          <div id="qunit"></div>
-          <a href="#" data-remodal-target="modal"><button id="opener">x</button></a>
-        </div>
+         <!-- center colum -->
+         <div class="col-sm-4" id="dialog">
+           <div class="remodal-bg">
+             <div id="qunit"></div>
+             <a href="#" data-remodal-target="modal"><button id="opener">x</button></a>
 
-        <div class="remodal" data-remodal-id="modal">
-          <a data-remodal-action="close" class="remodal-close"></a>
-          <a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a>
-          <a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>
-        </div>
+           <div class="remodal" data-remodal-id="modal">
+             <a data-remodal-action="close" class="remodal-close"></a>
+             <a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a>
+             <a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>
+           </div>
 
-        <div class="remodal" data-remodal-id="modal2"
-          data-remodal-options="hashTracking: false,
-          closeOnConfirm:false,closeOnCancel:  false,
-          closeOnEscape: false , closeOnOutsideClick: false,
-          modifier : without-animation with-test-class">
+           <div class="remodal" data-remodal-id="modal2"
+             data-remodal-options="hashTracking: false,
+             closeOnConfirm:false,closeOnCancel:  false,
+             closeOnEscape: false , closeOnOutsideClick: false,
+             modifier : without-animation with-test-class">
 
-          <a data-remodal-action="close" class="remodal-close"></a>
-          <a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a>
-          <a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>
-        </div>
+             <a data-remodal-action="close" class="remodal-close"></a>
+             <a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a>
+             <a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>
+           </div>
 
-        <div data-remodal-id="modal3">
-          <a data-remodal-action="close" class="remodal-close"></a>
-        </div>
+           <div data-remodal-id="modal3">
+             <a data-remodal-action="close" class="remodal-close"></a>
+           </div>
 
-        <div class="remodal" data-remodal-id="!modal4/test">
-          <a data-remodal-action="close" class="remodal-close"></a>
-        </div>
+           <div class="remodal" data-remodal-id="!modal4/test">
+             <a data-remodal-action="close" class="remodal-close"></a>
+           </div>
 
-        <div data-remodal-id="modal5">
-          <a data-remodal-action="close" class="remodal-close"></a>
-        </div>
+           <div data-remodal-id="modal5">
+             <a data-remodal-action="close" class="remodal-close"></a>
+           </div>
 
-        <div class="panel-body">
-          <center><img class="img-responsive" id="ship" src="./images/ship.png"/></center>
-        </div>
-    </div>
+           <div class="panel-body">
+             <center><img class="img-responsive" id="ship" src="./images/ship.png"/></center>
+           </div>
+         </div>
+       </div>
 
-      <!-- right colum -->
-    <div class="col-sm-4">
-      <div class="panel panel-info" id="time"></div>
-      <div class="panel panel-info" id="rotate-head">
-        <center><img class="img-responsive" src="./images/trend.png"/></center>
-          <div class="panel-body">
-            <img id="rotate" src="./images/icon.png">
-          </div>
-      </div>
+         <!-- right colum -->
+       <div class="col-sm-4">
+         <div class="panel panel-info" id="time-head"><br/><span id="time"></span></div>
+         <div class="panel panel-info" id="rotate-head">
+           <center><img class="img-responsive" src="./images/trend.png"/></center>
+             <div class="panel-body">
+               <img id="rotate" src="./images/icon.png">
+             </div>
+         </div>
 
-      <div class="panel panel-info" id="conflag-head">
-        <center><img class="img-responsive" src="./images/conflag.png"/></center>
-          <div class="panel-body">
-            <div class="c100 p25 red" id="conflag">
-              <span id="fire-span"></span>
-              <div class="slice">
-                  <div class="bar"></div>
-                  <div class="fill"></div>
-              </div>
-            </div>
-          </div>
-      </div>
+         <div class="panel panel-info" id="conflag-head">
+           <center><img class="img-responsive" src="./images/conflag.png"/></center>
+             <div class="panel-body">
+               <div class="c100 p25 red" id="conflag">
+                 <span id="fire-span"></span>
+                 <div class="slice">
+                     <div class="bar"></div>
+                     <div class="fill"></div>
+                 </div>
+               </div>
+             </div>
+         </div>
 
-      <div class="panel panel-info" id="distance-head">
-        <center><img class="img-responsive" src="./images/distance.png"/></center>
-          <div class="panel-body" id="distance-style">
-            <center><span style="font-size:80px" id ="dc"></span>
-            </center>
-          </div>
-      </div>
+         <div class="panel panel-info" id="distance-head">
+           <center><img class="img-responsive" src="./images/distance.png"/></center>
+             <div class="panel-body" id="distance-style">
+               <center><span style="font-size:80px" id="dc"></span>
+               </center>
+             </div>
+         </div>
 
-    </div>
-  </div>
-  </div>
-</div>
-
+       </div>
+     </div>
+     </div>
+   </div>
+   <img id="water" src="./images/water.gif"/>
+      <button id="save-data">Save Data</button>
       <button id = "alert-button">click</button>
       <script type = 'text/javascript'>
+      Parse.initialize("kAIPiOA1A3FvQVhMCYfy1L2I4CluUW1DnpdmCrk9", "8eMpJyDNSVdRPdhh14oSjWrzvOfmKm2LMZBVp6J6");
          var alertButton = $('#alert-button');
          var text = $('#analysis');
          var circleSpan = $('#circle-span');
@@ -143,6 +146,7 @@
          var fireInterface = $('#conflag');
          var dcSpan = $('#dc');
          var shipBigImg = $('#ship');
+         var saveData = $('#save-data');
          var oldData = '';
          var oldData1 = '';
          var oldData2 = '';
@@ -151,12 +155,18 @@
          var temp = [];
          var distance = [];
          var conflagration = [];
-         var degreeY1 = [];
-         var temp1 = [];
-         var degreeY2 = [];
-         var temp2 = [];
          var oldHistory = '';
 
+         var Query = Parse.Object.extend("Ship");
+         var query = new Parse.Query(Query);
+         query.find({
+            success: function(results) {
+
+            },
+            error: function(error) {
+
+            }
+         });
 
          var getMainData = setInterval(function() {
             $.ajax({
@@ -180,38 +190,38 @@
             });
          },1000);
 
-         var getCloneData1 = setInterval(function() {
-            timeBoard.html(time());
-            $.ajax({
-               url: 'http://10.32.176.4/clone1/'
-            })
-            .done(function(data) {
-               if (data !== oldData1){
-                  oldData1 = data;
-                  var dataArray = data.split(",");
-                  degreeY1.push(dataArray[1]);
-                  temp1.push(dataArray[3]);
-                  var dataArray = data.split(",");
-                  history("ship2",dataArray);
-               }
-            });
-         },1000);
-
-         var getCloneData2 = setInterval(function() {
-            $.ajax({
-               url: 'http://10.32.176.4/clone2/'
-            })
-            .done(function(data) {
-               if (data !== oldData2){
-                  oldData2 = data;
-                  var dataArray = data.split(",");
-                  degreeY2.push(dataArray[1]);
-                  temp2.push(dataArray[3]);
-                  var dataArray = data.split(",");
-                  history("ship3",dataArray);
-               }
-            });
-         },1000);
+         // var getCloneData1 = setInterval(function() {
+         //    timeBoard.html(time());
+         //    $.ajax({
+         //       url: 'http://10.32.176.4/clone1/'
+         //    })
+         //    .done(function(data) {
+         //       if (data !== oldData1){
+         //          oldData1 = data;
+         //          var dataArray = data.split(",");
+         //          degreeY1.push(dataArray[1]);
+         //          temp1.push(dataArray[3]);
+         //          var dataArray = data.split(",");
+         //          history("ship2",dataArray);
+         //       }
+         //    });
+         // },1000);
+         //
+         // var getCloneData2 = setInterval(function() {
+         //    $.ajax({
+         //       url: 'http://10.32.176.4/clone2/'
+         //    })
+         //    .done(function(data) {
+         //       if (data !== oldData2){
+         //          oldData2 = data;
+         //          var dataArray = data.split(",");
+         //          degreeY2.push(dataArray[1]);
+         //          temp2.push(dataArray[3]);
+         //          var dataArray = data.split(",");
+         //          history("ship3",dataArray);
+         //       }
+         //    });
+         // },1000);
 
          function history(name,inform,gasLevel) {
             var oldHistory = text.val();
@@ -222,14 +232,15 @@
                dcSpan.html("X");
             else
                dcSpan.html(data);
-
-
          }
          alertButton.click(function(){
             $.ajax({
                url: 'http://10.32.176.4/readme.txt/alert/'
             });
                alert("Alert Sent!");
+         });
+         saveData.click(function() {
+            dataBase();
          });
          function conflagrationLevel(data) {
             var gas ='';
@@ -268,31 +279,55 @@
             circleSpan.html(temperature+" °C");
          }
 
-         function dataBase(degreeY,temp) {
-            var dataAnalyze = [];
-            var averagedegreeY ='';
-            var averageTemp='';
+         function dataBase() {
+            var averageDegreeX = '';
+            var averageDegreeY = '';
+            var averageTemp= '';
+            var averageDistance = '';
+            var averageConflagration = '';
+            console.log(degreeX);
             for (var i = 0; i < degreeY.length;i++) {
-                averagedegreeY += degreeY[i];
-                averageTemp += temp[i];
+               averageDegreeX += degreeX[i];
+               averageDegreeY += degreeY[i];
+               averageTemp += temp[i];
+               averageDistance += distance[i];
+               averageConflagration += conflagration[i];
             }
-            averagedegreeY/=degreeY.length;
+            averageDegreeX/=degreeX.length;
+            averageDegreeY/=degreeY.length;
             averageTemp/=temp.length;
-            dataAnalyze.push(averagedegreeY);
-            dataAnalyze.push(averageTemp);
-         }
+            averageDistance/=distance.length;
+            averageConflagration/=conflagration.length;
+            console.log(averageDegreeX);
+            var Ship = Parse.Object.extend("Ship");
+            var ship = new Ship();
+            ship.set("x", averageDegreeX);
+            ship.set("y", averageDegreeY);
+            ship.set("distance", averageDistance);
+            ship.set("conflagration", averageConflagration);
+            ship.set("temp", averageTemp);
+            ship.save(null, {
+               success: function(object) {
+                  alert("success");
+               },
+               error: function(model, error) {
+                  alert(error);
+               }
+            });
 
+         }
          function time() {
             var date = new Date();
-            var now = " ("+(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear()+", "+date.getHours() + ":";
+            var showDate = date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
+            var now = showDate + "  "+ date.getHours() + ":";
             if (date.getMinutes() < 10)
                now+= "0"+date.getMinutes()+":"
             else
                now += date.getMinutes()+":";
             if (date.getSeconds() < 10)
-               now += "0"+date.getSeconds()+")";
+               now += "0"+date.getSeconds();
             else
-               now += date.getSeconds()+")"
+               now += date.getSeconds()
                return now;
          }
 
