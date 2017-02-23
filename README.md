@@ -1,5 +1,5 @@
 # Xcrusive project from EXCEED #13
-Ship that got the sensor for track harm around it and send the data back to user.
+Ship that got the sensor to increase awareness and track harm around it and then send the data back to users.
 
 ### Requirements
  * node.js [Download](https://nodejs.org/en/download/)
